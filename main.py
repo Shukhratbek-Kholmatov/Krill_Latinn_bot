@@ -5,8 +5,8 @@ from button_maker import make_button
 from open_file import open_file
 from get_item import get,add_item
 from admin_panel import admin_button,button_photo
-TOKEN="1801023834:AAHuLfP2yJm7Kt_NKBOKXVgd7hMWBRkfomc"
-bot = telebot.TeleBot(TOKEN,parse_mode="MARKDOWN")
+from config import token
+bot = telebot.TeleBot(token,parse_mode="MARKDOWN")
 admin="904185120"
 @bot.message_handler(commands=['start'])
 def start(message):
