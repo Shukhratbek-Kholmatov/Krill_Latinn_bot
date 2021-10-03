@@ -7,18 +7,15 @@ from get_item import get,add_item
 from admin_panel import admin_button,button_photo
 from config import token
 bot = telebot.TeleBot(token,parse_mode="MARKDOWN")
-admin="904185120"
 @bot.message_handler(commands=['start'])
 def start(message):
     hozir=datetime.now()
     mid=message.chat.id
     user=message.from_user
     bot.send_message(message.chat.id,f"*Assalomu alaykum {format(user.first_name)}.\nMatn yuboring📥\nBuyruqlar👉 /buyruqlar*")
-    bot.send_message(admin,f"*/start bosildi.\n👤Foydalanuvchi:{format(user.first_name)}\n👤 Useri:\n@{format(user.username)}\n🆔 Foydalanuvchi id raqami:\n{message.chat.id}*")
 @bot.message_handler(commands=['buyruqlar'])
 def buyruqlar(message):
-        bot.send_message(message.chat.id,f"*/start - botni ishga tushurish\n/info - bot haqida ma'lumot\n/stat - bot statistikasi*")
-        
+    bot.send_message(message.chat.id,f"*/start - botni ishga tushurish\n/info - bot haqida ma'lumot\n/stat - bot statistikasi*")      
 @bot.message_handler(commands=['info'])
 def info(message):
     bot.send_message(message.chat.id,f"*Bot orqali matnlarni lotindan-kirillga,kirilldan-lotinga o'girishingiz va matningizni chiroyli shaklga o'tqazishingiz mumkin.Eslatma : tarjima uchun matn 400 belgidan,shriftlar uchun esa 30 belgidan oshmasligi kerak.Tayyor matnni unga bitta bosish orqali nusxalab olishingiz mumkin.*")
